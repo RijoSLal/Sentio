@@ -5,9 +5,8 @@
 ## Features
 
 - Classifies comments into **Positive**, **Negative**, or **Neutral** categories.
-- Displays a progress bar while processing the input.
 - Provides a user-friendly interface using Streamlit.
-- Uses a pre-trained LSTM model for sentiment classification.
+- Uses a LSTM model for sentiment classification.
 - Visualizes the sentiment prediction with color-coded progress bars.
 
 ## Tech Stack
@@ -43,7 +42,6 @@ pickle-mixin
 
    ```bash
    git clone https://github.com/yourusername/sentio.git
-   cd sentio
    ```
 
 2. Install the required dependencies:
@@ -55,14 +53,14 @@ pickle-mixin
 3. Run the Streamlit app:
 
    ```bash
-   streamlit run app.py
+   streamlit run sentio.py
    ```
 
 4. Open your browser and go to `http://localhost:8501` to use the Sentio app.
 
 ## Files
 
-- **app.py**: The Streamlit app for the sentiment analysis interface.
+- **sentio.py**: The Streamlit app for the sentiment analysis interface.
 - **sentiment.h5**: The trained sentiment analysis model.
 - **tokenizer.pkl**: The tokenizer used to preprocess input text.
 - **train.csv**: The training dataset.
