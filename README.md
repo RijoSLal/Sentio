@@ -1,6 +1,6 @@
 # Sentio - Sentiment Analysis Web App
 
-**Sentio** is a sentiment analysis web application built using Streamlit, TensorFlow, and other essential libraries. It allows users to classify text comments as **Positive**, **Negative**, or **Neutral** by simply entering text into a text field.
+**Sentio** is a sentiment analysis web application based on LSTM built using TensorFlow, Streamlit and other essential libraries. It allows users to classify text comments as **Positive**, **Negative**, or **Neutral** by simply entering text into a text field.
 
 ## Features
 
