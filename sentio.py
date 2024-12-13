@@ -5,18 +5,19 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 import pickle
 import numpy as np
 
+#titile
 st.title("☘︎ Sentio")
 
 
 
-# Display the instructions
+# display the instructions
 st.text("Classify comments as positive, negative or neutral by entering it in the text field")
 
 
 def progress(rate,text,color):
 
 	'''
-	
+	this function creates progress bar based on the rate , text and  color
 	
 	'''
 	
@@ -42,7 +43,8 @@ def progress(rate,text,color):
 
 def dummy(text,color):
 	'''
-	
+        this function is create dummy progress bar , the initial animation is done using this function
+ 
 	'''
 
 	progress_placeholder = st.empty()
@@ -79,6 +81,9 @@ def dummy(text,color):
 
 
 
+'''
+this is the form part 
+'''
 
 with st.form(key='my_form'):
 
@@ -97,6 +102,10 @@ with st.form(key='my_form'):
 	prediction = model.predict(text_padded)
 
 	submit_button = st.form_submit_button(label='Submit')
+	
+	'''
+        be careful using index to call value because prediction is a 2d array
+        '''
 	if theme:
 		progress(int(prediction[0][1]*100),"Positive","green")
 		progress(int(prediction[0][2]*100),"Neutral","yellow")
@@ -112,6 +121,9 @@ with st.form(key='my_form'):
 		dummy("Positive","green")
 		dummy("Neutral","yellow")
 		dummy("Negative","red")
-
+'''
+this is beginner friendly project if you want to implement this seriously add methods to hading exception and use class based structure rather than function based
+it is cleaner , reduce code there are many rooms for reducing the amount of code 
+'''
 
 
