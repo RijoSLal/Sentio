@@ -5,6 +5,11 @@ from tensorflow import keras
 from tensorflow.keras.models import Sequential
 import pickle
 
+'''
+it is not a good practice to refine data and preprocess like this use sklearn for better readablilty and further improvements
+'''
+
+
 train = pd.read_csv("train.csv", encoding="iso-8859-1")
 test = pd.read_csv("test.csv", encoding="iso-8859-1")
 
