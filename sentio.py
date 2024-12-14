@@ -103,9 +103,9 @@ with st.form(key='my_form'):
 
 	submit_button = st.form_submit_button(label='Submit')
 	
-	'''
-        be careful using index to call value because prediction is a 2d array
-        '''
+
+        #be careful using index to call value because prediction is a 2d array
+        
 	if theme and len(theme.strip()) > 0 :
 		progress(int(prediction[0][1]*100),"Positive","green")
 		progress(int(prediction[0][2]*100),"Neutral","yellow")
