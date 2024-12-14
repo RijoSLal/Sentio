@@ -16,10 +16,10 @@ st.text("Classify comments as positive, negative or neutral by entering it in th
 
 def progress(rate,text,color):
 
-	'''
-	this function creates progress bar based on the rate , text and  color
 	
-	'''
+	#this function creates progress bar based on the rate , text and  color
+	
+
 	
 
 	progress_placeholder = st.empty()
@@ -42,10 +42,10 @@ def progress(rate,text,color):
 
 
 def dummy(text,color):
-	'''
-        this function is create dummy progress bar , the initial animation is done using this function
+
+        #this function is create dummy progress bar , the initial animation is done using this function
  
-	'''
+	
 
 	progress_placeholder = st.empty()
 
@@ -81,9 +81,9 @@ def dummy(text,color):
 
 
 
-'''
-this is the form part 
-'''
+
+#this is the form part 
+
 
 with st.form(key='my_form'):
 
@@ -121,9 +121,9 @@ with st.form(key='my_form'):
 		dummy("Positive","green")
 		dummy("Neutral","yellow")
 		dummy("Negative","red")
-'''
-this is beginner friendly project if you want to implement this seriously add methods to hading exception and use class based structure rather than function based
-it is cleaner , reduce code there are many rooms for reducing the amount of code 
-'''
+
+#this is beginner friendly project if you want to implement this seriously add methods to hading exception and use class based structure rather than function based
+#it is cleaner , reduce code there are many rooms for reducing the amount of code 
+
 
 
