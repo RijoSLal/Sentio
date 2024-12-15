@@ -19,13 +19,13 @@ test = test.dropna()
 
 
 
-x_train = train["text"].str.lower().to_list()
-y_train = train["sentiment"].replace({'positive': 1, 'negative': 0, 'neutral': 2})
-x_test = test["text"].str.lower().to_list()
-y_test = test["sentiment"].replace({'positive': 1, 'negative': 0, 'neutral': 2})
+x_train = train["text"].to_list()
+y_train = train["sentiment"].replace({'positive': 2, 'negative': 0, 'neutral': 1})
+x_test = test["text"].to_list()
+y_test = test["sentiment"].replace({'positive': 2, 'negative': 0, 'neutral': 1})
 
 
-tokenize = Tokenizer(num_words=6000)
+tokenize = Tokenizer(num_words=6000,lower=True)
 tokenize.fit_on_texts(x_train)
 
 
