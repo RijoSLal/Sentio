@@ -122,7 +122,7 @@ with st.form(key='my_form'):
 		dummy("Neutral","yellow")
 		dummy("Negative","red")
 
-#this is beginner friendly project if you want to implement this seriously add methods to hading exception and use class based structure rather than function based
+#this is beginner friendly project if you want to implement this seriously add methods to handle exception and use class based structure rather than function based
 #it is cleaner , reduce code there are many rooms for reducing the amount of code 
 
 
