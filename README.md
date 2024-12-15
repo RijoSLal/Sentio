@@ -41,7 +41,7 @@ pickle-mixin
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/sentio.git
+   git clone https://github.com/RijoSLal/sentio.git
    ```
 
 2. Install the required dependencies:
