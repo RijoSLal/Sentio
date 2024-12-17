@@ -111,9 +111,9 @@ with st.form(key='my_form'):
 		progress(int(prediction[0][1]*100),"Neutral","yellow")
 		progress(int(prediction[0][0]*100),"Negative","red")
 		value=np.argmax(prediction[0])
-		if value==2:
+		if value==1:
 			st.warning("This is a neutral comment 🙂")
-		elif value==1:
+		elif value==2:
 			st.success("This is a positive comment 😊")
 		else:
 			st.error("This is a negative comment 😔")	
