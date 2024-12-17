@@ -107,13 +107,13 @@ with st.form(key='my_form'):
         #be careful using index to call value because prediction is a 2d array
         
 	if theme and len(theme.strip()) > 0 and submit_button:
-		progress(int(prediction[0][2]*100),"Positive","green")
-		progress(int(prediction[0][1]*100),"Neutral","yellow")
+		progress(int(prediction[0][1]*100),"Positive","green")
+		progress(int(prediction[0][2]*100),"Neutral","yellow")
 		progress(int(prediction[0][0]*100),"Negative","red")
 		value=np.argmax(prediction[0])
-		if value==1:
+		if value==2:
 			st.warning("This is a neutral comment 🙂")
-		elif value==2:
+		elif value==1:
 			st.success("This is a positive comment 😊")
 		else:
 			st.error("This is a negative comment 😔")	
