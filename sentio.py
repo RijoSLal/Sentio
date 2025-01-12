@@ -1,3 +1,5 @@
+import os 
+os.environ["CUDA_VISIBLE_DEVICES"]="-1"
 import streamlit as st 
 import time
 from tensorflow.keras.models import load_model
@@ -100,24 +102,60 @@ with st.form(key='my_form'):
 
 
 	prediction = model.predict(text_padded)
+    
+
+	toxic_model = load_model('sentiment_toxic.h5')
+
+
+	with open('tokenizer_toxic.pkl', 'rb') as f:
+		tokenizer = pickle.load(f)
+
+	text_toc = [theme.lower()]
+	text_seq_toc = tokenizer.texts_to_sequences(text_toc)
+	text_padded_toc = pad_sequences(text_seq_toc, maxlen=200)
+
+
+	prediction_toxic = toxic_model.predict(text_padded_toc)
+
+
+
+
+
+
 
 	submit_button = st.form_submit_button(label='Submit')
 	
-
-        #be careful using index to call value because prediction is a 2d array
+     
+    #be careful using index to call value because prediction is a 2d array
         
 	if theme and len(theme.strip()) > 0 and submit_button:
-		progress(int(prediction[0][1]*100),"Positive","green")
-		progress(int(prediction[0][2]*100),"Neutral","yellow")
+		progress(int(prediction[0][2]*100),"Positive","green")
+		progress(int(prediction[0][1]*100),"Neutral","yellow")
 		progress(int(prediction[0][0]*100),"Negative","red")
 		value=np.argmax(prediction[0])
-		if value==2:
+		if value==1:
 			st.warning("This is a neutral comment 🙂")
-		elif value==1:
+		elif value==2:
 			st.success("This is a positive comment 😊")
 		else:
-			st.error("This is a negative comment 😔")	
-	else:
+			st.error("This is a negative comment 😔")
+			if int(prediction[0][0]*100)>50:
+				label = ["toxic", "severe_toxic", "obscene", "threat", "insult", "identity_hate"]
+
+				probabilities = prediction_toxic[0]
+
+				
+				threshold = 0.5
+				predicted_labels = [label[i] for i, prob in enumerate(probabilities) if prob > threshold]
+
+				
+				if predicted_labels:
+					result_string = f"This comment seems to contain {', '.join(predicted_labels)}"
+					st.info(f"🤬 {result_string}")
+				else:
+					st.info("This comment doesn't seem particularly toxic")
+													
+	else :
 		dummy("Positive","green")
 		dummy("Neutral","yellow")
 		dummy("Negative","red")

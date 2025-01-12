@@ -1,3 +1,5 @@
+import os 
+os.environ["CUDA_VISIBLE_DEVICES"]="-1"
 import pandas as pd
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
@@ -37,7 +39,8 @@ X_test = pad_sequences(x_test_dataset, maxlen=200)
 
 model = Sequential([
     keras.layers.Embedding(input_dim=6000, output_dim=128),
-    keras.layers.LSTM(128, return_sequences=True),
+    keras.layers.Bidirectional(
+    keras.layers.LSTM(128, return_sequences=True)),
     keras.layers.Dropout(0.2),
     keras.layers.LSTM(64),
     keras.layers.Dropout(0.2),
