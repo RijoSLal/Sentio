@@ -150,7 +150,7 @@ with st.form(key='my_form'):
 
 				
 				if predicted_labels:
-					result_string = f"This comment seems to contain {', '.join(predicted_labels)}"
+					result_string = f"This comment seems to contain {', '.join(predicted_labels)} contents"
 					st.info(f"🤬 {result_string}")
 				else:
 					st.info("This comment doesn't seem particularly toxic")
