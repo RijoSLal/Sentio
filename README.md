@@ -69,6 +69,8 @@ sklearn
 - **train.csv**: The training dataset.
 - **test.csv**: The test dataset.
 - **toxic_data.csv**: the dataset for toxicity detection
+- **sentiment_toxic.h5**: The trained toxicity recognition model.
+- **tokenizer_toxic.pkl**: The tokenizer used to preprocess toxic text.
 
 ## License
 
