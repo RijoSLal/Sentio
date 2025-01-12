@@ -1,11 +1,11 @@
 # Sentio - Sentiment & Toxicity Analysis Web App
 
-**Sentio** is a sentiment analysis web application based on LSTM built using TensorFlow, Streamlit and other essential libraries. It allows users to classify text comments as **Positive**, **Negative**, or **Neutral** and classify **toxicity** contents in the comment by simply entering text into a text field.
+**Sentio** is a sentiment analysis web application based on LSTM built using TensorFlow, Streamlit and other essential libraries. It allows users to classify text comments as **Positive**, **Negative**, or **Neutral** and classify **Toxicity** contents in the comment by simply entering text into a text field.
 
 ## Features
 
 - Classifies comments into **Positive**, **Negative**, or **Neutral** categories.
-- Identify **toxic** contents in comments
+- Identify **Toxic** contents in comments
 - Provides a user-friendly interface using Streamlit.
 - Uses a LSTM model for sentiment classification.
 - Visualizes the sentiment prediction and toxicity with color-coded progress bars.
