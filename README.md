@@ -1,13 +1,14 @@
-# Sentio - Sentiment Analysis Web App
+# Sentio - Sentiment & Toxicity Analysis Web App
 
-**Sentio** is a sentiment analysis web application based on LSTM built using TensorFlow, Streamlit and other essential libraries. It allows users to classify text comments as **Positive**, **Negative**, or **Neutral** by simply entering text into a text field.
+**Sentio** is a sentiment analysis web application based on LSTM built using TensorFlow, Streamlit and other essential libraries. It allows users to classify text comments as **Positive**, **Negative**, or **Neutral** and classify **toxicity** contents in the comment by simply entering text into a text field.
 
 ## Features
 
 - Classifies comments into **Positive**, **Negative**, or **Neutral** categories.
+- Identify **toxic** contents in comments
 - Provides a user-friendly interface using Streamlit.
 - Uses a LSTM model for sentiment classification.
-- Visualizes the sentiment prediction with color-coded progress bars.
+- Visualizes the sentiment prediction and toxicity with color-coded progress bars.
 
 ## Tech Stack
 
@@ -17,6 +18,7 @@
 - **Pandas**: For data manipulation.
 - **NumPy**: For numerical computations.
 - **Pickle**: For saving and loading the tokenizer model.
+- **sklearn**: For splitting data and preprocessing
 
 ## Requirements
 
@@ -34,6 +36,7 @@ pandas
 numpy
 tensorflow-cpu
 pickle-mixin
+sklearn
 ```
 
 ## How to Run the App
@@ -65,6 +68,7 @@ pickle-mixin
 - **tokenizer.pkl**: The tokenizer used to preprocess input text.
 - **train.csv**: The training dataset.
 - **test.csv**: The test dataset.
+- **toxic_data.csv**: the dataset for toxicity detection
 
 ## License
 
