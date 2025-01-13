@@ -150,6 +150,8 @@ with st.form(key='my_form'):
 
 				
 				if predicted_labels:
+					percentage = (len(predicted_labels) / 6) * 100
+					progress(int(percentage),"Toxicity","blue")
 					result_string = f"This comment seems to contain {', '.join(predicted_labels)} contents"
 					st.info(f"🤬 {result_string}")
 				else:
